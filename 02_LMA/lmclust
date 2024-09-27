@@ -1,0 +1,8 @@
+#NEXUS
+begin sets;
+    taxset Acrodonta = Phrynocephalus_versicolor Pogona_vitticeps;
+    taxset Serpentes = Pantherophis_guttatus Ptyas_mucosa Thamnophis_elegans Boaedon_fuliginosus Bungarus_multicintus Naja_naja Laticauda_colubrina Ophiophagus_hannah Myanophis_thanlyinensis Diadophis_punctatus Imantodes_cenchoa Thermophis_baileyi Azemiops_feae Daboia_siamensis Vipera_latastei Arizona_elegans Pituophis_catenifer Bothrops_jararaca Crotalus_tigris Protobothrops_mucrosquamatus Charina_bottae Morelia_viridis Python_bivittatus;
+    taxset Pleurodonta = Anolis_sagrei Ctenosaura_bakeri Cyclura_pinguis Iguana_delicatissima Phrynosoma_blainvillii Phrynosoma_platyrhinos Sceloporus_occidentalis Sceloporus_tristichus;
+    taxset Others = Anolis_carolinensis elgaria_multicarinata Shinisaurus_crocodilurus Varanus_komodoensis Varanus_salvator AspidoScelis_marmoratus Aspidoscelis_tigris Salvator_merianae Lacerta_agilis Lacerta_bilineata Lacerta_viridis Podarcis_muralis Podarcis_raffonei Zootoca_vivipara Cryptoblepharus_egeriae Lerista_edwardsae Plestiodon_gilberti Hemicordylus_capensis Eublepharis_macularius Gekko_japonicus Lepidodactylus_listeri Paroedura_picta Sphaerodactylus_townsendi Sphenodon_punctatus;
+    taxset IGNORED = Alligator_mississippiensis Caretta_caretta;
+end;
