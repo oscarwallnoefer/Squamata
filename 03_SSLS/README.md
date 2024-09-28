@@ -36,3 +36,22 @@ Then:
                # Assign the vector to the corresponding gene in the list
                vettori_genes[[gene]] <- vettore_gene
            }
+
+Then: 
+
+       C_I <- c(vettori_genes$NDUFA1, vettori_genes$NDUFA2, ...) # create complexes
+       C_II<- c(vettori_genes$SDH3, vettori_genes$SDH4, ...)
+       ...
+
+Plot:
+
+
+       plot(C_I, pch = 19, cex=0.5, col = ifelse( C_I < -0.5 | C_I > 0.5, "red","black"), main = "Complex I")
+       plot(C_II, pch = 19, cex=0.5, col = ifelse( C_II < -0.5 | C_II > 0.5, "red","black"), main = "Complex II")
+       plot(C_III, pch = 19, cex=0.5, col = ifelse( C_III < -0.5 | C_III > 0.5, "red","black"), main = "Complex III")
+       plot(C_IV, pch = 19, cex=0.5, col = ifelse( C_IV < -0.5 | C_IV > 0.5, "red","black"), main = "Complex IV")
+       plot(C_V, pch = 19, cex=0.5, col = ifelse( C_V < -0.5 | C_V > 0.5, "red","black"), main = "Complex V")
+
+    
+
+
