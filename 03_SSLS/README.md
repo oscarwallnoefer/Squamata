@@ -19,18 +19,18 @@ R:
 + `delta <- mt_mlxsite - nuc_mlxsite`
 + `values <- unlist(delta)`
 
-+ `coordinate_genes <- data.frame(
-       Gene = c("ATP5A1", "ATP5B", ...)
-       Intervallo = c("1-1599", "1600-3189", ...))`
-+ `vettori_genes <- list()
-    for (i in 1:nrow(coordinate_genes)) { #Iterate through each gene across the coordinate table
-        gene <- coordinate_genes$Gene[i]  # Gene name
-        intervallo <- unlist(strsplit(coordinate_genes$Intervallo[i], "-"))  # Interval of coordinates
-        start <- as.numeric(intervallo[1])
-        end <- as.numeric(intervallo[2])
-        # Estract values corresponding to the current gene
-        vettore_gene <- values[start:end]
-        # Assign the vector to the corresponding gene in the list
-        vettori_genes[[gene]] <- vettore_gene
-    }`
-  
+       + coordinate_genes <- data.frame(
+              Gene = c("ATP5A1", "ATP5B", ...)
+              Intervallo = c("1-1599", "1600-3189", ...))
+         
+       + vettori_genes <- list()
+           for (i in 1:nrow(coordinate_genes)) { #Iterate through each gene across the coordinate table
+               gene <- coordinate_genes$Gene[i]  # Gene name
+               intervallo <- unlist(strsplit(coordinate_genes$Intervallo[i], "-"))  # Interval of coordinates
+               start <- as.numeric(intervallo[1])
+               end <- as.numeric(intervallo[2])
+               # Estract values corresponding to the current gene
+               vettore_gene <- values[start:end]
+               # Assign the vector to the corresponding gene in the list
+               vettori_genes[[gene]] <- vettore_gene
+           }
