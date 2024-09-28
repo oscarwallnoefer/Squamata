@@ -8,9 +8,9 @@ ex.
     Morelia_viridis
     Naja_naja
 
-Then, python (`presence_absence.py`)
+Then, python (`presence_absence.py`).
 
-Output: `completeness_matrix.csv`
+Output: `completeness_matrix.csv`.
 
 Then, R (`completeness.R`).
 
