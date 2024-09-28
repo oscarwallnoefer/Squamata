@@ -8,7 +8,8 @@ ex.
     Morelia_viridis
     Naja_naja
 
-Then, python (
+Then, python (`presence_absence.py`)
+
 Output: `completeness_matrix.csv`
 
 Then, R (`completeness.R`).
