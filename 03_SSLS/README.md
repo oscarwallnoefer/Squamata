@@ -28,7 +28,6 @@ R:
         intervallo <- unlist(strsplit(coordinate_genes$Intervallo[i], "-"))  # Interval of coordinates
         start <- as.numeric(intervallo[1])
         end <- as.numeric(intervallo[2])
-        
         # Estract values corresponding to the current gene
         vettore_gene <- values[start:end]
         # Assign the vector to the corresponding gene in the list
