@@ -20,6 +20,7 @@ R:
 + `values <- unlist(delta)`
 
 Then:
+
        coordinate_genes <- data.frame(
               Gene = c("ATP5A1", "ATP5B", ...)
               Intervallo = c("1-1599", "1600-3189", ...))
