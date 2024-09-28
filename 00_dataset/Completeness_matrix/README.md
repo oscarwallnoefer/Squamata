@@ -8,9 +8,9 @@ ex.
     Morelia_viridis
     Naja_naja
 
-Then, python (`presence_absence.py`), then `sed 's/_/ /'`.
+Then, python (`presence_absence.py`).
 
-Output: `completeness_matrix.csv`.
+Output: `completeness_matrix.csv`, then `sed 's/_/ /'`.
 
 Then, R (`completeness.R`).
 
