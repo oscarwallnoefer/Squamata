@@ -14,8 +14,8 @@ Output: `completeness_matrix.csv`
 
 Then, R (`completeness.R`).
 
+---
 
-
-
+![completeness_matrix](completeness.svg)
 
 
