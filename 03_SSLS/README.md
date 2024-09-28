@@ -12,16 +12,11 @@ R was used to plot likelihoods. Delta > 0.5 or < -0.5 were highlighted, since th
 
 R:
        
-`mt_mlxsite <- read.table("RAxML_perSiteLLs.MT", skip = 1)`
-         
-`nuc_contact_mlxsite <- read.table("RAxML_perSiteLLs.NUC", skip = 1)`
-                 
-`mt_mlxsite <- mt_mlxsite[,-1]`
-         
-`nuc_mlxsite <-nuc_mlxsite[,-1]`
-                 
-`delta <- mt_mlxsite - nuc_mlxsite`
-                 
-`values <- unlist(delta)`
++ `mt_mlxsite <- read.table("RAxML_perSiteLLs.MT", skip = 1)`
++ `nuc_contact_mlxsite <- read.table("RAxML_perSiteLLs.NUC", skip = 1)`
++ `mt_mlxsite <- mt_mlxsite[,-1]`
++ `nuc_mlxsite <-nuc_mlxsite[,-1]`
++ `delta <- mt_mlxsite - nuc_mlxsite`
++ `values <- unlist(delta)`
 
 
