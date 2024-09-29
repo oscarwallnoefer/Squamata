@@ -18,4 +18,4 @@ Then, R (`completeness.R`).
 
 ![completeness_matrix](completeness.svg)
 
-
+![completeness_matrix](completeness_nucox.svg)
