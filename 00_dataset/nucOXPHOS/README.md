@@ -1,4 +1,4 @@
-gene_order <- c("NDUFA1", "NDUFA2", "NDUFA3", "NDUFA4", "NDUFA5", "NDUFA6", "NDUFA7", 
+> gene_order <- c("NDUFA1", "NDUFA2", "NDUFA3", "NDUFA4", "NDUFA5", "NDUFA6", "NDUFA7", 
                 "NDUFA8", "NDUFA9", "NDUFA10", "NDUFA11", "NDUFA12", "NDUFA13", "NDUFAB1", 
                 "NDUFB10", "NDUFB11", "NDUFB1", "NDUFB2", "NDUFB3", "NDUFB4", "NDUFB5", 
                 "NDUFB6", "NDUFB7", "NDUFB8", "NDUFB9", "NDUFC1", "NDUFC2", "NDUFS1", 
