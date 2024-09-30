@@ -15,3 +15,6 @@ This step was performed on R. _{adephylo}_, _{ape4}_ and _{ape}_ are necessary p
 1. read the Newick file resulting from the previous point thorugh _{ape}_: `read.tree(file="FILENAME")`.
 2. extract the root-to-tip distances using _distRoot_ (library _{adephylo}_): `distRoot(mito_erc,tips="all",method="patristic")`
 3. normalize them: `mito_sum<-sum(mito_distances)`; `mito_distnorm<-mito_distances / mito_sum`
+
+---
+
