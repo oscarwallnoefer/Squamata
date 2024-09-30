@@ -16,6 +16,6 @@ Then, R (`completeness.R`).
 
 ---
 
-![completeness_matrix](completeness.svg)
+![completeness_matrix](completeness_mtOXPHOS.svg)
 
-![completeness_matrix](completeness_nucox.svg)
+![completeness_matrix](completeness_nucOXPHOS.svg)
