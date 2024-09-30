@@ -16,3 +16,14 @@ riepilogo_valori <- valori_geni %>%
         N = n()
     )
 print(riepilogo_valori)
+
+# violin
+library(ggplot2)
+ggplot(valori_geni, aes(x = Tipo, y = Valore, fill = Tipo)) +
+    geom_violin(trim = FALSE) + 
+    geom_boxplot(width = 0.1, position = position_dodge(0.9), outlier.shape = NA) + 
+    labs(title = "Violin Plot Geni di Contatto e Non Contatto",
+         x = "Tipo di Gene",
+         y = "Valore") +
+    theme_minimal() +
+    theme(legend.position = "none")  
