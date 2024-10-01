@@ -1,6 +1,8 @@
 # Load necessary library
 library(stats)
 
+valori_ordinati <- unlist(vettori_genes[coordinate_genes$Gene])
+
 # Define the window size
 window_size <- 100
 
