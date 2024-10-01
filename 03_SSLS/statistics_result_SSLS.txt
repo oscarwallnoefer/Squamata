@@ -1,0 +1,21 @@
+
+################################################
+# test tra 1° e 2° base vd 3° base in SSLS > 0.5
+> wilcox_test
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  gruppo_12_sopra and gruppo_3_sopra
+W = 20963, p-value = 0.4759
+alternative hypothesis: true location shift is not equal to 0
+#############################################################
+#############################################################
+# test tra 1° e 2° base vd 3° base in SSLS < -0.5
+
+> wilcox_test
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  gruppo_12_sotto and gruppo_3_sotto
+W = 73586, p-value = 0.184
+alternative hypothesis: true location shift is not equal to 0
