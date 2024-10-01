@@ -1,3 +1,6 @@
+### le due distribuzioni non sono normali > W. rank sum test
+### distribuzione geni contatto diversa da geni non contatto
+
 > print(mw_test)
 
 	Wilcoxon rank sum test with continuity correction
@@ -6,7 +9,6 @@ data:  Valore by Tipo
 W = 191425, p-value = 0.001597
 alternative hypothesis: true location shift is not equal to 0
 
-> 
 > # Riepilogo delle statistiche per entrambi i gruppi
 > riepilogo_valori <- valori_geni %>%
 +     group_by(Tipo) %>%
