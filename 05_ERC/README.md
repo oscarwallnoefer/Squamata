@@ -25,7 +25,7 @@ Branch lengths are optimized with a custom phylo tree (in our case Squamata spec
 
 ##  Pipeline extensive approach
 
-| Preliminary Processes | Script |
+| 00_Preliminary_Steps | Script |
 |---|---|
 |a. Branch lenghts are optimized from both mitochondrial and nuclear OXPHOS genes (mtOXPHOS and nucOXPHOS). | `RAxML with "-f e" option` |
 |b. Four different set of orthologs are extracted from our dataset of ~900 BUSCO genes as follows: 88 genes (Block1), 88 (Block2), 13 (Block3) and 13 (Block4). Reiterate the extraction 1000 times. Each "Block" must be indipendent from the others for each iteraction. OXPHOS genes were been previously removed from BUSCO dataset.| `Random_fna_from_folder_x1000.sh`|
@@ -33,7 +33,7 @@ Branch lengths are optimized with a custom phylo tree (in our case Squamata spec
 
 Then, R. 
 
-|Normalization and Plots| Script|
+| 01_Normalization_&_Plots| Script|
 |---|---|
 |Load newick trees, scale branch lengths. |`DensityPlot_nucOXPHOS_BUSCO.R`|
 |Normalization: for each iterations we used Block2 to normalize both Block1 and nuclear OXPHOS, and Block4 to normalize both Block3 and mitochondrial OXPHOS. |`DensityPlot_nucOXPHOS_BUSCO.R`|
