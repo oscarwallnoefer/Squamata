@@ -18,7 +18,7 @@ Branch lengths are optimized with a custom phylo tree (in our case Squamata spec
 1. Read the Newick file resulting from RAxML: `read.tree(file="FILENAME")`.
 2. Extract the root-to-tip distances: `distRoot(mito_erc,tips="all",method="patristic")`
 3. Scaling: `mito_distnorm<-mito_distances/sum(mito_distances)`
-4. Plot: `plot(mito_distnorm,nuc_distnorm,xlab="mtOXPHOS Branch Length",ylab="nucOXPHOS Branch Lenght",pch=19)`; `abline(lm(mito_distnorm ~ nucox_distnorm),col="blue")`
+4. Plot: `plot(mito_distnorm,nuc_distnorm)`
 5. r^2: `r_squared<-summary(lm(mito_distnorm ~ nucox_distnorm))$r.squared`
 
 ---
