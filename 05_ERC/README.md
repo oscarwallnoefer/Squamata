@@ -1,8 +1,8 @@
 # Evolutionary Rate Correlations
 
-Evolutionary rate correlation (ERC, also known as evolutionary rate covariance or evolutionary rate coevolution) has been used as a tool to investigate physical interactions and shared functionality among proteins. 
-Since correlation between branch lengths are exposed to phylogenetic bias (PIC: Phylogenetic Indipendet Contrast), we developed a method to avoid this effect. Furthermore, we have built a strong approach to test correlation between branch lengths, based on distribution of thousends of Spearman's Rho. 
-Branch lengths are optimized respect to a custom created phylo tree, based on bibliography (in our case Burbrick et al. 2020). We used RAxML with _"-f e"_ option, specifing the partition file and the model selection.
+**Evolutionary rate correlation** (ERC, also known as _evolutionary rate covariation_) is a widely used approach to investigate physical interactions and shared functionality among proteins. 
+Since correlation between branch lengths are exposed to phylogenetic bias (_PIC: Phylogenetic Indipendet Contrast_), we developed a method to avoid this effect. Furthermore, we have built a strong approach to test correlation between branch lengths, based on distribution of thousends of Spearman's Rho. See `workflow_ERC.svg`. 
+Branch lengths are optimized with a custom phylo tree (in our case Squamata species tree _Burbrick et al. 2020_). We used RAxML with _"-f e"_ option, specifing the partition file and the model selection.
         
         raxmlHPC -f e -t ortho_erc_test.tree -m GTRGAMMAIX -q mt_nt_oxphos.best_scheme -s concatenated.out -n TEST
         # -t = species tree based on literature.
@@ -11,17 +11,18 @@ Branch lengths are optimized respect to a custom created phylo tree, based on bi
         # -s = concatenated alignment
         # -n = output prefix
 
-* Branch lengths extractions and normalization.
-This step was performed on R. _{adephylo}_, _{ape4}_ and _{ape}_ are necessary packages.
-1. read the Newick file resulting from the previous point thorugh _{ape}_: `read.tree(file="FILENAME")`.
-2. extract the root-to-tip distances using _distRoot_ (library _{adephylo}_): `distRoot(mito_erc,tips="all",method="patristic")`
-3. normalize them: `mito_sum<-sum(mito_distances)`; `mito_distnorm<-mito_distances / mito_sum`
+## Key steps quick and dirty correlation
+
+* Branch lengths extractions and normalization. This step was performed on R. _{adephylo}_ and _{ape}_ are necessary packages.
+1. Read the Newick file resulting from RAxML: `read.tree(file="FILENAME")`.
+2. Extract the root-to-tip distances: `distRoot(mito_erc,tips="all",method="patristic")`
+3. Scaling: `mito_distnorm<-mito_distances/sum(mito_distances)`
 4. Plot: `plot(mito_distnorm,nuc_distnorm,xlab="mtOXPHOS Branch Length",ylab="nucOXPHOS Branch Lenght",pch=19)`; `abline(lm(mito_distnorm ~ nucox_distnorm),col="blue")`
 5. r^2: `r_squared<-summary(lm(mito_distnorm ~ nucox_distnorm))$r.squared`
 
 ---
 
-##  Pipeline 
+##  Pipeline extensive approach
 
 | Preliminary Processes | Script |
 |---|---|
