@@ -33,10 +33,10 @@ Then, R.
 
 |Normalization and Plots| Script|
 |---|---|
-|Load newick trees, scale branch lengths. |`DensityPlot_Nucox_Ortho.R`|
-|Normalization: for each iterations we used Block2 to normalize both Block1 and nuclear OXPHOS, and Block4 to normalize both Block3 and mitochondrial OXPHOS. |`DensityPlot_Nucox_Ortho.R`|
-|Calculate Spearman Correlations|`DensityPlot_Nucox_Ortho.R`|
-|Plot all the values of Rho|`DensityPlot_Nucox_Ortho.R`|
+|Load newick trees, scale branch lengths. |`DensityPlot_nucOXPHOS_BUSCO.R`|
+|Normalization: for each iterations we used Block2 to normalize both Block1 and nuclear OXPHOS, and Block4 to normalize both Block3 and mitochondrial OXPHOS. |`DensityPlot_nucOXPHOS_BUSCO.R`|
+|Calculate Spearman Correlations|`DensityPlot_nucOXPHOS_BUSCO.R`|
+|Plot all the values of Rho|`DensityPlot_nucOXPHOS_BUSCO.R`|
 
 NB: Set `DensityPlot_Nucox_Ortho.R` depending on your variables. For example, when mitochondrial OXPHOS evolutionary rates are considered, you have to normalize Block3 and mitochondrial branch lengths with Block4.
 
