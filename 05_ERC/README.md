@@ -2,6 +2,7 @@
 
 **Evolutionary rate correlation** (ERC, also known as _evolutionary rate covariation_) is a widely used approach to investigate physical interactions and shared functionality among proteins. 
 Since correlation between branch lengths are exposed to phylogenetic bias (_PIC: Phylogenetic Indipendet Contrast_), we developed a method to avoid this effect. Furthermore, we have built a strong approach to test correlation between branch lengths, based on distribution of thousends of Spearman's Rho. See `workflow_ERC.svg`. 
+
 Branch lengths are optimized with a custom phylo tree (in our case Squamata species tree _Burbrick et al. 2020_). We used RAxML with _"-f e"_ option, specifing the partition file and the model selection.
         
         raxmlHPC -f e -t ortho_erc_test.tree -m GTRGAMMAIX -q mt_nt_oxphos.best_scheme -s concatenated.out -n TEST
