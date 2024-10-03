@@ -19,7 +19,7 @@ Branch lengths are optimized with a custom phylo tree (in our case Squamata spec
 2. Extract the root-to-tip distances: `distRoot(mito_erc,tips="all",method="patristic")`
 3. Scaling: `mito_distnorm<-mito_distances/sum(mito_distances)`
 4. Plot: `plot(mito_distnorm,nuc_distnorm)`
-5. r^2: `r_squared<-summary(lm(mito_distnorm ~ nucox_distnorm))$r.squared`
+5. r^2: `summary(lm(mito_distnorm ~ nucox_distnorm))$r.squared`
 
 ---
 
