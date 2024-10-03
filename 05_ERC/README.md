@@ -29,6 +29,8 @@ This step was performed on R. _{adephylo}_, _{ape4}_ and _{ape}_ are necessary p
 |b. Four different set of orthologs are extracted from our dataset of ~900 BUSCO genes as follows: 88 genes (Block1), 88 (Block2), 13 (Block3) and 13 (Block4). Reiterate the extraction 1000 times. Each "Block" must be indipendent from the others for each iteraction. OXPHOS genes were been previously removed from BUSCO dataset.| `Random_fna_from_folder_x1000.sh`|
 |c. Branch lengths are optimized across all the 1000 iterations. Then, extract all the results. | `Run_RAxML_Across_Folders.sh` `Extraction_treefile_across_folders.sh` |
 
+Then, R. 
+
 |Normalization and Plots| Script|
 |---|---|
 |Load newick trees, scale branch lengths. |`DensityPlot_Nucox_Ortho.R`|
@@ -37,6 +39,9 @@ This step was performed on R. _{adephylo}_, _{ape4}_ and _{ape}_ are necessary p
 |Plot all the values of Rho|`DensityPlot_Nucox_Ortho.R`|
 
 NB: Set `DensityPlot_Nucox_Ortho.R` depending on your variables. For example, when mitochondrial OXPHOS evolutionary rates are considered, you have to normalize Block3 and mitochondrial branch lengths with Block4.
+
+Then, plot correlations (`DensityPlots.R`).
+
 
 ---
 
