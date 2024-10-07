@@ -14,16 +14,12 @@ Output: `completeness_matrix.csv`, then `sed 's/_/ /'`.
 
 Then, R (`completeness.R`).
 
->  #Count TRUE and FALSE
-  logical_columns <- matrix[, sapply(matrix, is.logical)]
-  
-  #Conta il numero di TRUE e FALSE
-  true_count <- sum(logical_columns, na.rm = TRUE)  # Somma dei TRUE
-  false_count <- sum(!logical_columns, na.rm = TRUE) # Somma dei FALSE
-  
-  #Mostra i risultati
-  cat("Numero di TRUE:", true_count, "\n")
-  cat("Numero di FALSE:", false_count, "\n")
+> #Count TRUE and FALSE
+> logical_columns <- matrix[, sapply(matrix, is.logical)]
+> true_count <- sum(logical_columns, na.rm = TRUE) 
+> false_count <- sum(!logical_columns, na.rm = TRUE)
+> cat("Numero di TRUE:", true_count, "\n")
+> cat("Numero di FALSE:", false_count, "\n")
 
 
 ---
