@@ -21,7 +21,7 @@ ggplot(completeness_long, aes(x = factor(variable, levels = gene_order), y = Spe
     geom_tile(color = "black", size = 0.5) +  
     scale_fill_manual(values = c("TRUE" = "white", "FALSE" = "red"), 
                       name = "Legend") +
-    labs(x = "mtOXPHOS", y = "Species") +
+    labs(x = "nucOXPHOS", y = "Species") +
     theme_minimal() +
     theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7),
           axis.text.y = element_text(face = "italic", size = 8),  
