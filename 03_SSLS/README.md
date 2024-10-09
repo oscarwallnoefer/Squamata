@@ -61,12 +61,10 @@ Then:
                   gene <- coordinate_genes$Gene[i]  # Nome del gene
                   intervallo <- unlist(strsplit(coordinate_genes$Intervallo[i], "-"))  # Coordinate
                   
-                  # Verifica che l'intervallo contenga due valori numerici
                   if (length(intervallo) == 2) {
                       start <- as.numeric(intervallo[1])
                       end <- as.numeric(intervallo[2])
                       
-                      # Controlla che start ed end siano numerici e non NA
                       if (!is.na(start) && !is.na(end)) {
                           vettore_gene <- values[start:end]
                           vettori_genes[[gene]] <- vettore_gene
