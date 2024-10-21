@@ -51,3 +51,21 @@ logical   44931     477
 > summary(values < -0.5)
    Mode   FALSE    TRUE 
 logical   44715     693 
+
+#################################################################
+
+# differenza 1° e 2° base vs 3° base
+
+> num_viola_sopra_0.5
+[1] 276
+> punti_viola_sotto_0.5 <- valori_ordinati[positions_purple] < -0.5
+> sum(punti_viola_sotto_0.5)
+[1] 287
+> punti_gialli_sotto_0.5 <- valori_ordinati[positions_yellow] < -0.5
+> sum(punti_gialli_sotto_0.5)
+[1] 406
+> punti_gialli_sopra_0.5 <- valori_ordinati[positions_gialli] > 0.5
+Error: object 'positions_gialli' not found
+> punti_gialli_sopra_0.5 <- valori_ordinati[positions_yellow] > 0.5
+> sum(punti_gialli_sopra_0.5)
+[1] 201
