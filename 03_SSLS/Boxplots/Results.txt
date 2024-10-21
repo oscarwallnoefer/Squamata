@@ -69,3 +69,23 @@ Error: object 'positions_gialli' not found
 > punti_gialli_sopra_0.5 <- valori_ordinati[positions_yellow] > 0.5
 > sum(punti_gialli_sopra_0.5)
 [1] 201
+
+################# distribuzione punti sopra lo 0.5
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  punti_gialli_sopra_0.5 and punti_viola_sopra_0.5
+W = 23692, p-value = 0.0065
+alternative hypothesis: true location shift is not equal to 0
+
+################# distribuzione punti sotto lo -0.5
+> print(test_mann_whitney_neg)
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  punti_gialli_sotto_neg_0.5 and punti_viola_sotto_neg_0.5
+W = 61147, p-value = 0.2663
+alternative hypothesis: true location shift is not equal to 0
+
+
+### commento: sopra lo 0.5 significativa differenza (**), nulla sotto lo -0.5
