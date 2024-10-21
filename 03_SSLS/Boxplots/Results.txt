@@ -78,6 +78,11 @@ data:  punti_gialli_sopra_0.5 and punti_viola_sopra_0.5
 W = 23692, p-value = 0.0065
 alternative hypothesis: true location shift is not equal to 0
 
+> mean(punti_viola_sopra_0.5)
+[1] 1.022774
+> mean(punti_gialli_sopra_0.5)
+[1] 0.9230339
+
 ################# distribuzione punti sotto lo -0.5
 > print(test_mann_whitney_neg)
 
@@ -87,5 +92,9 @@ data:  punti_gialli_sotto_neg_0.5 and punti_viola_sotto_neg_0.5
 W = 61147, p-value = 0.2663
 alternative hypothesis: true location shift is not equal to 0
 
+> mean(punti_viola_sotto_neg_0.5)
+[1] -1.351129
+> mean(punti_gialli_sotto_neg_0.5)
+[1] -1.235252
 
-### commento: sopra lo 0.5 significativa differenza (**), nulla sotto lo -0.5
+### commento: sopra lo 0.5 significativa differenza (**), nulla sotto lo -0.5. Le prime due basi hanno una distribuzione più ampia (vedi medie).
