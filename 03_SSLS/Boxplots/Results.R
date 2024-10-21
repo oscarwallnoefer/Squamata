@@ -1,12 +1,26 @@
 ### le due distribuzioni non sono normali > W. rank sum test
 ### distribuzione geni contatto diversa da geni non contatto
 
-> print(mw_test)
+> shapiro_test_contatto
+
+	Shapiro-Wilk normality test
+
+data:  valori_geni$Valore[valori_geni$Tipo == "Contatto"]
+W = 0.96049, p-value = 1.923e-11
+
+> shapiro_test_non_contatto
+
+	Shapiro-Wilk normality test
+
+data:  valori_geni$Valore[valori_geni$Tipo == "Non Contatto"]
+W = 0.96536, p-value = 1.664e-10
+
+> wilcox.test(valori_geni$Valore[valori_geni$Tipo == "Contatto"],valori_geni$Valore[valori_geni$Tipo == "Non Contatto"])
 
 	Wilcoxon rank sum test with continuity correction
 
-data:  Valore by Tipo
-W = 191425, p-value = 0.001597
+data:  valori_geni$Valore[valori_geni$Tipo == "Contatto"] and valori_geni$Valore[valori_geni$Tipo == "Non Contatto"]
+W = 191743, p-value = 0.000357
 alternative hypothesis: true location shift is not equal to 0
 
 > # Riepilogo delle statistiche per entrambi i gruppi
