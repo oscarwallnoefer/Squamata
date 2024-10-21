@@ -18,10 +18,10 @@ alternative hypothesis: true location shift is not equal to 0
 +         Deviazione_Standard = sd(Valore, na.rm = TRUE),
 +         N = n()
 +     )
-> 
+
 > print(riepilogo_valori)
 # A tibble: 2 × 5
   Tipo          Media Mediana Deviazione_Standard     N
   <chr>         <dbl>   <dbl>               <dbl> <int>
-1 Contatto     -0.401  -0.640                1.28   654
-2 Non Contatto -0.613  -0.776                1.23   529
+1 Contatto     -0.232  -0.537                1.30   586
+2 Non Contatto -0.489  -0.734                1.24   584
