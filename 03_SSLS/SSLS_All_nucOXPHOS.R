@@ -6,7 +6,7 @@ nomi_geni <- c("NDUFA1", "NDUFA2", "NDUFA3", "NDUFA4", "NDUFA5", "NDUFA6", "NDUF
 valori_ordinati <- unlist(vettori_genes[nomi_geni])
 
 # Define the window size
-window_size <- 100
+window_size <- 60
 
 # Calculate moving average
 #moving_avg <- filter(valori_ordinati, rep(1/window_size, window_size), sides = 2)
@@ -39,16 +39,16 @@ for (i in seq(1, length(valori_ordinati), by = 3)) {
 
 
 # Plot the original points with grey color
-plot(valori_ordinati, pch = 19, cex = 0.8, col = colors, xlab = "", ylab = "ΔSSLS", ylim = c(-5, max(C_I)))
+plot(valori_ordinati, pch = 19, cex = 0.8, col = colors, xlab = "", ylab = "ΔSSLS", ylim = c(min(valori_ordinati), max(valori_ordinati)))
 
 # Add yellow points
 points(positions_yellow, valori_ordinati[positions_yellow], pch = 21, cex = 0.8, bg = "white", col = "black")
 
 # Add purple points
-points(positions_purple, valori_ordinati[positions_purple], pch = 21, cex = 0.8, bg = "#009966", col = "black")
+points(positions_purple, valori_ordinati[positions_purple], pch = 21, cex = 0.8, bg = "black", col = "black")
 
 # Plot the moving average
-lines(moving_avg, col = "black", lwd = 2)
+lines(moving_avg, col = "#cc3333", lwd = 2)
 
 segments(x0 = length(C_I), y0 = min(valori_ordinati), x1 = length(C_I), y1 = max(valori_ordinati), col = "black", lwd = 2, lty = 2)
 segments(x0 = length(C_I) + length(C_II), y0 = min(valori_ordinati), x1 = length(C_I) + length(C_II), y1 = max(valori_ordinati), col = "black", lwd = 2, lty = 2)
