@@ -62,8 +62,8 @@ logical   44715     693
 
 |Tipo|> 0.5| < -0.5|
 |---|---|---|
-|Contact| 280 | 197 |
-|Non contact | 306 | 387|
+|Contact| 280 | 306 |
+|Non contact | 197 | 387|
 
 ---
 
