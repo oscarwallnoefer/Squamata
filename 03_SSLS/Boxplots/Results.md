@@ -26,7 +26,7 @@ W = 191743, p-value = 0.000357
 alternative hypothesis: true location shift is not equal to 0
 
 ##################################################################
-> # Riepilogo delle statistiche per entrambi i gruppi
+### Riepilogo delle statistiche per entrambi i gruppi
 > riepilogo_valori <- valori_geni %>%
 +     group_by(Tipo) %>%
 +     summarise(
@@ -37,24 +37,35 @@ alternative hypothesis: true location shift is not equal to 0
 +     )
 
 > print(riepilogo_valori)
-# A tibble: 2 × 5
-  Tipo          Media Mediana Deviazione_Standard     N
-  <chr>         <dbl>   <dbl>               <dbl> <int>
-1 Contatto     -0.232  -0.537                1.30   586
-2 Non Contatto -0.489  -0.734                1.24   584
+### A tibble: 2 × 5
+  |Tipo|          Media| Mediana| Deviazione_Standard|     N|
+  |---|---|---|---|---|
+|Contatto |    -0.232 | -0.537  |              1.30 |  586
+|Non Contatto |-0.489 | -0.734   |             1.24|   584
 
 #################################################################
 
 > summary(values > 0.5)
+
    Mode   FALSE    TRUE 
+
 logical   44931     477 
+
 > summary(values < -0.5)
+
    Mode   FALSE    TRUE 
+
 logical   44715     693 
+
+
+|Tipo|> 0.5| < -0.5|
+|---|---|---|
+|Contact| 280 | 197 |
+|Non contact | 306 | 387|
 
 #################################################################
 
-# differenza 1° e 2° base vs 3° base
+### differenza 1° e 2° base vs 3° base
 
 > num_viola_sopra_0.5
 [1] 276
