@@ -15,7 +15,7 @@ W = 0.96049, p-value = 1.923e-11
 data:  valori_geni$Valore[valori_geni$Tipo == "Non Contatto"]
 W = 0.96536, p-value = 1.664e-10
 
-#################################################################
+---
 
 > wilcox.test(valori_geni$Valore[valori_geni$Tipo == "Contatto"],valori_geni$Valore[valori_geni$Tipo == "Non Contatto"])
 
@@ -25,7 +25,8 @@ data:  valori_geni$Valore[valori_geni$Tipo == "Contatto"] and valori_geni$Valore
 W = 191743, p-value = 0.000357
 alternative hypothesis: true location shift is not equal to 0
 
-##################################################################
+---
+
 ### Riepilogo delle statistiche per entrambi i gruppi
 > riepilogo_valori <- valori_geni %>%
 +     group_by(Tipo) %>%
@@ -37,13 +38,14 @@ alternative hypothesis: true location shift is not equal to 0
 +     )
 
 > print(riepilogo_valori)
+
 ### A tibble: 2 × 5
   |Tipo|          Media| Mediana| Deviazione_Standard|     N|
   |---|---|---|---|---|
 |Contatto |    -0.232 | -0.537  |              1.30 |  586
 |Non Contatto |-0.489 | -0.734   |             1.24|   584
 
-#################################################################
+--- 
 
 > summary(values > 0.5)
 
@@ -63,7 +65,7 @@ logical   44715     693
 |Contact| 280 | 197 |
 |Non contact | 306 | 387|
 
-#################################################################
+---
 
 ### differenza 1° e 2° base vs 3° base
 
@@ -81,7 +83,10 @@ Error: object 'positions_gialli' not found
 > sum(punti_gialli_sopra_0.5)
 [1] 201
 
-################# distribuzione punti sopra lo 0.5
+
+---
+
+### distribuzione punti sopra lo 0.5
 
 	Wilcoxon rank sum test with continuity correction
 
@@ -94,7 +99,10 @@ alternative hypothesis: true location shift is not equal to 0
 > mean(punti_gialli_sopra_0.5)
 [1] 0.9230339
 
-################# distribuzione punti sotto lo -0.5
+---
+
+### distribuzione punti sotto lo -0.5
+
 > print(test_mann_whitney_neg)
 
 	Wilcoxon rank sum test with continuity correction
