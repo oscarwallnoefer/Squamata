@@ -1,6 +1,8 @@
+### script to plot delta single site likelihood support. It highlights codon positions and draw a moving average associated to each gene.
+
 library(zoo)
 
-window_size <- 10
+window_size <- 60
 moving_avg_gene <- lapply(vettori_genes[nomi_geni[which(nomi_geni %in% names(vettori_genes))]], function(gene_values) {
     rollmean(gene_values, k = window_size, fill = NA, align = "center")
 })
@@ -10,30 +12,30 @@ palette_colori <- rainbow(length(moving_avg_gene))
 valori_ordinati <- unlist(vettori_genes[nomi_geni[which(nomi_geni %in% names(vettori_genes))]])
 
 colors <- rep("grey", length(valori_ordinati))
-positions_yellow <- c()
-positions_purple <- c()
+positions_3 <- c()
+positions_12 <- c()
 
 for (i in seq(1, length(valori_ordinati), by = 3)) {
     if (!is.na(valori_ordinati[i]) && (valori_ordinati[i] < -0.5 || valori_ordinati[i] > 0.5)) {
-        positions_purple <- c(positions_purple, i)
+        positions_12 <- c(positions_12, i)
     }
     if ((i + 1) <= length(valori_ordinati) && !is.na(valori_ordinati[i + 1]) && 
         (valori_ordinati[i + 1] < -0.5 || valori_ordinati[i + 1] > 0.5)) {
-        positions_purple <- c(positions_purple, i + 1)
+        positions_12 <- c(positions_12, i + 1)
     }
     if ((i + 2) <= length(valori_ordinati) && !is.na(valori_ordinati[i + 2]) && 
         (valori_ordinati[i + 2] < -0.5 || valori_ordinati[i + 2] > 0.5)) {
-        positions_yellow <- c(positions_yellow, i + 2)
+        positions_3 <- c(positions_3, i + 2)
     }
 }
 
 plot(valori_ordinati, pch = 19, cex = 0.8, col = colors, xlab = "", ylab = "ΔSSLS", 
      ylim = c(min(valori_ordinati, na.rm = TRUE), max(valori_ordinati, na.rm = TRUE)))
 
-# yellow = third codon positions
-# purple  = first two codon positions
-points(positions_yellow, valori_ordinati[positions_yellow], pch = 21, cex = 0.8, bg = "white", col = "black")
-points(positions_purple, valori_ordinati[positions_purple], pch = 21, cex = 0.8, bg = "black", col = "black")
+# 3 = third codon positions
+# 12  = first two codon positions
+points(positions_3, valori_ordinati[positions_3], pch = 21, cex = 0.8, bg = "white", col = "black")
+points(positions_12, valori_ordinati[positions_12], pch = 21, cex = 0.8, bg = "black", col = "black")
 
 for (i in seq_along(moving_avg_gene)) {
     start_pos <- sum(sapply(moving_avg_gene[1:(i - 1)], length)) + 1 
