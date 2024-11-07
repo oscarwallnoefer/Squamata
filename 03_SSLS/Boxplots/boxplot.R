@@ -1,13 +1,13 @@
 library(ggplot2)
 contact_genes <- c("ATP5F1", "ATP5G", "COX4", "COX5B", "COX6A", 
-                   "COX6B", "COX7A", "COX7B", "COX7C", "CYC1", 
+                   "COX6B", "COX7A", "COX7B", "COX7C", 
                    "NDUFA10", "NDUFA11", "NDUFA12", "NDUFA13", 
                    "NDUFA1", "NDUFA3", "NDUFA8", "NDUFA9", 
                    "NDUFAB1", "NDUFB10", "NDUFB11", "NDUFB2", 
                    "NDUFB3", "NDUFB4", "NDUFB5", "NDUFB6", 
                    "NDUFB7", "NDUFB8", "NDUFB9", "NDUFC2", 
                    "NDUFS2", "NDUFS5", "NDUFS7", "NDUFS8", 
-                   "QCR6", "QCR7", "QCR8", "QCR9", "UQCRFS1")
+                   "QCR6", "QCR7", "QCR8", "QCR9", "UQCRFS1", "CYC1")
 
 valori_geni <- data.frame(Gene = character(), Valore = numeric(), Tipo = character(), stringsAsFactors = FALSE)
 
