@@ -19,9 +19,11 @@ R:
 + `delta <- mt_mlxsite - nuc_mlxsite`
 + `values <- unlist(delta)`
 
-Run the scripts below. Then, run `Rainbow.R` to obtain the main plot.
-
 Then:
+
+<details>
+
+<summary> Run this </summary>
 
                            coordinate_genes <- data.frame(
                 Gene = c(
@@ -101,6 +103,10 @@ Then:
        plot(C_III, pch = 19, cex=0.5, col = ifelse( C_III < -0.5 | C_III > 0.5, "red","black"), main = "Complex III")
        plot(C_IV, pch = 19, cex=0.5, col = ifelse( C_IV < -0.5 | C_IV > 0.5, "red","black"), main = "Complex IV")
        plot(C_V, pch = 19, cex=0.5, col = ifelse( C_V < -0.5 | C_V > 0.5, "red","black"), main = "Complex V")
+
+</details>
+
+Run the scripts above. Then, run `Rainbow.R` to obtain the main plot.
 
 ---
 
