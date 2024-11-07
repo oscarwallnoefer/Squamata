@@ -12,7 +12,7 @@ Comment: the two sets do not follow a normal distributions.
 ### Wilcoxon rank sum test with continuity correction
 
 Command: `wilcox.test(valori_geni$Valore[valori_geni$Tipo == "Contatto"],valori_geni$Valore[valori_geni$Tipo == "Non Contatto"])`
-> W = 191743, p-value = 0.000357
+W = 191743, p-value = 0.000357
 
 Comment: the two sets differ significantly.  
 
@@ -24,14 +24,14 @@ Comment: the two sets differ significantly.
 	
 <summary> script </summary>
 
-riepilogo_valori <- valori_geni %>%
-     group_by(Tipo) %>%
-     summarise(
-         Media = mean(Valore, na.rm = TRUE),
-         Mediana = median(Valore, na.rm = TRUE),
-         Deviazione_Standard = sd(Valore, na.rm = TRUE),
-         N = n()
-     )
+	riepilogo_valori <- valori_geni %>%
+	     group_by(Tipo) %>%
+	     summarise(
+	         Media = mean(Valore, na.rm = TRUE),
+	         Mediana = median(Valore, na.rm = TRUE),
+	         Deviazione_Standard = sd(Valore, na.rm = TRUE),
+	         N = n()
+	     )
 > print(riepilogo_valori)
 	
 </details>
