@@ -20,7 +20,10 @@ Comment: the two sets differ significantly.
 
 ### Summarize statistics
 
-<details> <summary> script <summary>
+<details>
+	
+<summary> script </summary>
+
 riepilogo_valori <- valori_geni %>%
      group_by(Tipo) %>%
      summarise(
@@ -30,6 +33,7 @@ riepilogo_valori <- valori_geni %>%
          N = n()
      )
 > print(riepilogo_valori)
+	
 </details>
 
 |Type|Mean|Median|St. Dev.|N|
