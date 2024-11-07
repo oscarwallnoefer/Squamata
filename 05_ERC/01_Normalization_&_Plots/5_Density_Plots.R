@@ -2,11 +2,10 @@
 ###### Density Plots ######
 ###########################
 
-### Install viridis
 install.packages("viridis")
 library(viridis)
 
-### Plot three curves in the same plot
+### Plot curves in the same plot
 ggplot() +
     geom_density(data = table_rho_Block12, aes(x = V3, fill = "NucOXPHOS-Orthologs"), alpha = 0.5) +
     geom_density(data = table_rho_Block34, aes(x = V3, fill = "MtOXPHOS-Orthologs"), alpha = 0.5) +
