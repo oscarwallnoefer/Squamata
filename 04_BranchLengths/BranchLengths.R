@@ -1,4 +1,6 @@
-### Branch Lengths Comparisons
+##################################
+### Branch Lengths Comparisons ###
+##################################
 
 library(ape)
 nucox_tree<-read.tree("nucOXPHOS_BranchLengths.txt")
@@ -75,7 +77,7 @@ points(dataset_distnorm_ordinato$busco_tree_distances,
        col = "#CCCCCC", 
        cex = 1.3)          
 
-#Link mtOXPHOS and nucOXPHOS
+# Link mtOXPHOS and nucOXPHOS
 for (i in 1:nrow(dataset_distnorm_ordinato)) {
     lines(x = c(i, i), 
           y = c(dataset_distnorm_ordinato$mt_tree_distances[i], dataset_distnorm_ordinato$nucox_tree_distances[i]),
@@ -94,10 +96,10 @@ legend("bottomright",
        yjust = 1,
        inset = c(0.01, 0.01))  
 
-#Add species name
+# Add species name
 axis(1, at = 1:length(dataset_distnorm_ordinato$mt_tree_distances), 
      labels = rownames(dataset_distnorm_ordinato), font.axis = 3, las =2,
      cex.axis = 0.8)  
 
-#Add vertical lines
+# Add vertical lines
 abline(v = seq(0.5, length(dataset_distnorm_ordinato$mt_tree_distances) + 0.5), col = "black", lty = "dotted")
