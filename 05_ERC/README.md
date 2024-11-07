@@ -7,19 +7,10 @@ Branch lengths are optimized with a custom phylo tree (in our case Squamata spec
         
         raxmlHPC -f e -t ortho_erc_test.tree -m GTRGAMMAIX -q mt_nt_oxphos.best_scheme -s concatenated.out -n TEST
         # -t = species tree based on literature.
-        # -m = model selected using Modeltest
+        # -m = model selected
         # -q = best partitioning scheme obtained from iqtree, or the partition file (in RAxML format)
         # -s = concatenated alignment
         # -n = output prefix
-
-## Key steps quick and dirty correlation
-
-* Branch lengths extractions and normalization. This step was performed on R. _{adephylo}_ and _{ape}_ are necessary packages.
-1. Read the Newick file resulting from RAxML: `read.tree(file="FILENAME")`.
-2. Extract the root-to-tip distances: `distRoot(mito_erc,tips="all",method="patristic")`
-3. Scaling: `mito_distnorm<-mito_distances/sum(mito_distances)`
-4. Plot: `plot(mito_distnorm,nuc_distnorm)`
-5. r^2: `summary(lm(mito_distnorm ~ nucox_distnorm))$r.squared`
 
 ---
 
@@ -28,7 +19,7 @@ Branch lengths are optimized with a custom phylo tree (in our case Squamata spec
 | 00_Preliminary_Steps | Script |
 |---|---|
 |a. Branch lenghts are optimized from both mitochondrial and nuclear OXPHOS genes (mtOXPHOS and nucOXPHOS). | `RAxML with "-f e" option` |
-|b. Four different set of orthologs are extracted from our dataset of ~900 BUSCO genes as follows: 88 genes (Block1), 88 (Block2), 13 (Block3) and 13 (Block4). Reiterate the extraction 1000 times. Each "Block" must be indipendent from the others for each iteraction. OXPHOS genes were been previously removed from BUSCO dataset.| `Random_fna_from_folder_x1000.sh`|
+|b. Four different set of orthologs are extracted from our dataset of ~900 BUSCO genes as follows: 73 genes (Block1), 73 (Block2), 13 (Block3) and 13 (Block4). Reiterate the extraction 1000 times. Each "Block" must be indipendent from the others for each iteraction. OXPHOS genes were been previously removed from BUSCO dataset.| `Random_fna_from_folder_x1000.sh`|
 |c. Branch lengths are optimized across all the 1000 iterations. Then, extract all the results. | `Run_RAxML_Across_Folders.sh` `Extraction_treefile_across_folders.sh` |
 
 Then, R. 
