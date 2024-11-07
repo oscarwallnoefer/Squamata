@@ -1,3 +1,5 @@
+### lengths complexes and single genes
+
 lunghezze_CI <- c(
     lunghezza_NDUFA1 <- length(vettori_genes$NDUFA1),
     lunghezza_NDUFA2 <- length(vettori_genes$NDUFA2),
