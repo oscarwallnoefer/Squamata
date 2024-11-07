@@ -121,6 +121,5 @@ Then:
 ---
 
 
-
 ![Figure_2_rainbow_copia.png](Figure_2_rainbow_copia.png)
 
