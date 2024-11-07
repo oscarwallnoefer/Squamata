@@ -84,7 +84,7 @@ def confronta_colonne(col1, col2):
     sostituzioni_sinonime = 0
     count=0
     for val1, val2 in zip(df[col1], df[col2]):
-        if pd.notna(val1) and pd.notna(val2):  # Verifica se entrambi i valori non sono mancanti
+        if pd.notna(val1) and pd.notna(val2):  
             sostituzioni_totali += 1
             if amino_acid_table.get(val1) == amino_acid_table.get(val2):
                 # Obtain ancestral codons of val1 and val2
@@ -108,12 +108,12 @@ for i in range(len(colonne)):
     for j in range(i+1, len(colonne)):
         col1 = colonne[i]
         col2 = colonne[j]
-        # Use the function "check_indipendenza_colonne) to check independence between nodes. If are independet, proceed with comparisons
+        # Use the function "check_indipendenza_colonne" to check independence between nodes. If are independet, proceed with comparisons
         check=check_indipendeza_colonne(col1,col2)
         if check:
             sostituzioni_totali, sostituzioni_sinonime = confronta_colonne(col1, col2)
             print(col1+" "+col2+" "+str(sostituzioni_totali))
-            if sostituzioni_totali > 0:  # Verifica se ci sono sostituzioni totali
+            if sostituzioni_totali > 0:  
                 data_points.append(((col1, col2), (sostituzioni_totali, sostituzioni_sinonime)))
 
 # Print list of tuples to the output
