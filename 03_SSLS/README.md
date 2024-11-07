@@ -110,5 +110,5 @@ Run the scripts above. Then, run `Rainbow.R` to obtain the main plot.
 
 ---
 
-![Figure_2_rainbow_copia.pdf](Figure_2_rainbow_copia.pdf)
+![Figure_2_rainbow_copia.png](Figure_2_rainbow_copia.png)
 
