@@ -1,3 +1,7 @@
+#######################################
+### n° species from fasta directory ###
+#######################################
+
 import os
 from Bio import SeqIO
 
@@ -8,7 +12,7 @@ def extract_species_from_fasta(fasta_file):
         species.add(record.id.split()[0])  # Adjust this part if the header format is different
     return species
 
-# Read the species list from the lista_specie.txt file
+# Read the species list from a custom list of species file ("lista_specie.txt")
 with open("species_list.txt", "r") as f:
     total_species_list = [line.strip() for line in f]
 
@@ -44,5 +48,5 @@ with open("completeness_matrix.csv", "w", newline="") as csvfile:
     # Write the sorted matrix data
     for species, presence in sorted_species:
         writer.writerow([species] + presence)
-
+# great!
 print(f"Completeness matrix created and sorted: 'completeness_matrix.csv'")
