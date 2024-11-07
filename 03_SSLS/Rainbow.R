@@ -1,4 +1,8 @@
-### script to plot delta single site likelihood support. It highlights codon positions and draw a moving average associated to each gene.
+######################
+### DeltaSSLS plot ###
+######################
+
+# This script highlights codon positions and draw a moving average associated to each gene.
 
 library(zoo)
 
