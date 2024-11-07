@@ -39,79 +39,46 @@ Comment: the two sets differ significantly.
 |Type|Mean|Median|St. Dev.|N|
 |---|---|---|---|---|
 |contact |    -0.232 | -0.537  |              1.30 |  586
-|non contatto |-0.489 | -0.734   |             1.24|   584
+|non contact |-0.489 | -0.734   |             1.24|   584
 
 --- 
 
-### 
+### Summary significant support for one topology
 
-> summary(values > 0.5)
-
-   Mode   FALSE    TRUE 
-
-logical   44931     477 
-
-> summary(values < -0.5)
-
-   Mode   FALSE    TRUE 
-
-logical   44715     693 
-
-
-|Tipo|> 0.5| < -0.5|
+|Type|> 0.5| < -0.5|
 |---|---|---|
-|Contact| 280 | 306 |
-|Non contact | 197 | 387|
+|True|477|693|
+| False|44931|44715|
+
+|Type|> 0.5| < -0.5|
+|---|---|---|
+|contact| 280 | 306 |
+|non contact | 197 | 387|
 
 ---
 
-### differenza 1° e 2° base vs 3° base
+### Codon position differences
 
-> num_viola_sopra_0.5
-[1] 276
-> punti_viola_sotto_0.5 <- valori_ordinati[positions_purple] < -0.5
-> sum(punti_viola_sotto_0.5)
-[1] 287
-> punti_gialli_sotto_0.5 <- valori_ordinati[positions_yellow] < -0.5
-> sum(punti_gialli_sotto_0.5)
-[1] 406
-> punti_gialli_sopra_0.5 <- valori_ordinati[positions_gialli] > 0.5
-Error: object 'positions_gialli' not found
-> punti_gialli_sopra_0.5 <- valori_ordinati[positions_yellow] > 0.5
-> sum(punti_gialli_sopra_0.5)
-[1] 201
-
+|Type|> 0.5| < -0.5|
+|---|---|---|
+|first two positions|276| 287|
+|third positions|201|406|
 
 ---
 
-### distribuzione punti sopra lo 0.5
+### Distributions based on codon positions
 
-	Wilcoxon rank sum test with continuity correction
+|Type|> 0.5| mean | < -0.5| mean|
+|---|---|---|---|---|
+|first two positions|276|1.022774| 287|-1.235252|
+|third positions|201|0.9230339|406|-1.351129| 
 
-data:  punti_gialli_sopra_0.5 and punti_viola_sopra_0.5
-W = 23692, p-value = 0.0065
-alternative hypothesis: true location shift is not equal to 0
+Wilcoxon rank sum test with continuity correction
+> first two codon positions>0.5 and third positions>0.5
+> W = 23692, p-value = 0.0065
 
-> mean(punti_viola_sopra_0.5)
-[1] 1.022774
-> mean(punti_gialli_sopra_0.5)
-[1] 0.9230339
+Wilcoxon rank sum test with continuity correction
+> first two codon positions < -0.5 and third positions < -0.5 
+> W = 61147, p-value = 0.2663
 
----
-
-### distribuzione punti sotto lo -0.5
-
-> print(test_mann_whitney_neg)
-
-	Wilcoxon rank sum test with continuity correction
-
-data:  punti_gialli_sotto_neg_0.5 and punti_viola_sotto_neg_0.5
-W = 61147, p-value = 0.2663
-alternative hypothesis: true location shift is not equal to 0
-
-> mean(punti_viola_sotto_neg_0.5)
-[1] -1.351129
-> mean(punti_gialli_sotto_neg_0.5)
-[1] -1.235252
-
-### commento: sopra lo 0.5 significativa differenza (**), nulla sotto lo -0.5. Le prime due basi hanno una distribuzione più ampia (vedi medie).
+Comment: over the 0.5 there is a significant difference (**), under the -0.5 there is not.
