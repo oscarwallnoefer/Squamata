@@ -19,6 +19,8 @@ R:
 + `delta <- mt_mlxsite - nuc_mlxsite`
 + `values <- unlist(delta)`
 
+Run the scripts below. Then, run `Rainbow.R` to obtain the main plot.
+
 Then:
 
                            coordinate_genes <- data.frame(
