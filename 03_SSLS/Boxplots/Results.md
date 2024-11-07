@@ -1,51 +1,46 @@
-### le due distribuzioni non sono normali > W. rank sum test
-### distribuzione geni contatto diversa da geni non contatto
+# ERCs's Rho Distribution Comparisons
 
-> shapiro_test_contatto
+### Shapiro-Wilk normality test
 
-	Shapiro-Wilk normality test
+|type| W | p-value|
+|---|---|---|
+|contact|0.96049|1.923e-11|
+|non contact|0.96536|1.664e-10|
 
-data:  valori_geni$Valore[valori_geni$Tipo == "Contatto"]
-W = 0.96049, p-value = 1.923e-11
+Comment: the two sets do not follow a normal distributions.
 
-> shapiro_test_non_contatto
+### Wilcoxon rank sum test with continuity correction
 
-	Shapiro-Wilk normality test
+Command: `wilcox.test(valori_geni$Valore[valori_geni$Tipo == "Contatto"],valori_geni$Valore[valori_geni$Tipo == "Non Contatto"])`
+> W = 191743, p-value = 0.000357
 
-data:  valori_geni$Valore[valori_geni$Tipo == "Non Contatto"]
-W = 0.96536, p-value = 1.664e-10
-
----
-
-> wilcox.test(valori_geni$Valore[valori_geni$Tipo == "Contatto"],valori_geni$Valore[valori_geni$Tipo == "Non Contatto"])
-
-	Wilcoxon rank sum test with continuity correction
-
-data:  valori_geni$Valore[valori_geni$Tipo == "Contatto"] and valori_geni$Valore[valori_geni$Tipo == "Non Contatto"]
-W = 191743, p-value = 0.000357
-alternative hypothesis: true location shift is not equal to 0
+Comment: the two sets differ significantly.  
 
 ---
 
-### Riepilogo delle statistiche per entrambi i gruppi
-> riepilogo_valori <- valori_geni %>%
-+     group_by(Tipo) %>%
-+     summarise(
-+         Media = mean(Valore, na.rm = TRUE),
-+         Mediana = median(Valore, na.rm = TRUE),
-+         Deviazione_Standard = sd(Valore, na.rm = TRUE),
-+         N = n()
-+     )
+### Summarize statistics
 
+<details> 
+riepilogo_valori <- valori_geni %>%
+     group_by(Tipo) %>%
+     summarise(
+         Media = mean(Valore, na.rm = TRUE),
+         Mediana = median(Valore, na.rm = TRUE),
+         Deviazione_Standard = sd(Valore, na.rm = TRUE),
+         N = n()
+     )
 > print(riepilogo_valori)
 
-### A tibble: 2 × 5
-  |Tipo|          Media| Mediana| Deviazione_Standard|     N|
-  |---|---|---|---|---|
-|Contatto |    -0.232 | -0.537  |              1.30 |  586
-|Non Contatto |-0.489 | -0.734   |             1.24|   584
+</details>
+
+|Type|Mean|Median|St. Dev.|N|
+|---|---|---|---|---|
+|contact |    -0.232 | -0.537  |              1.30 |  586
+|non contatto |-0.489 | -0.734   |             1.24|   584
 
 --- 
+
+### 
 
 > summary(values > 0.5)
 
