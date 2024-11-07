@@ -104,5 +104,5 @@ Then:
 
 ---
 
-![SSLS](SSLS_PointsOption.png)
+![SSLS](Figure_2_rainbow_copia.pdf)
 
