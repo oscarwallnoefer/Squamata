@@ -1,6 +1,6 @@
 
-[![Generic badge](https://img.shields.io/badge/journal-Molecular%20Phylogenetics%20and%20Evolution-blue.svg)](https://shields.io/)
 [![DOI:10.1016/j.ympev.2025.108358](https://zenodo.org/badge/DOI/10.1016/j.ympev.2025.108358.svg)](https://doi.org/10.1016/j.ympev.2025.108358) 
+[![Generic badge](https://img.shields.io/badge/Journal-Molecular%20Phylogenetics%20and%20Evolution-orange.svg)](https://shields.io/)
 [![Citation Badge](https://api.juleskreuer.eu/citation-badge.php?doi=10.1016/j.ympev.2025.108358)](https://juleskreuer.eu/citation-badge/)
 
 # Squamata
